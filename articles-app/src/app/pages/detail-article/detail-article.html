@@ -1,0 +1,19 @@
+<div class="uk-container" uk-height-viewport="offset-bottom: 40">
+  <div class="uk-margin"></div>
+  <!-- Titre de l'article -->
+  <h2><b>{{ article.title }}</b></h2>
+
+  <!-- Carte de l'article avec image de fond -->
+  <div class="uk-card uk-card-secondary uk-card-hover uk-card-body sdv-movie-card"
+       [ngStyle]="{ 'background-image': 'url(' + article.imgPath + ')' }">
+
+    <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+      <p>
+        <FONT COLOR="black">
+          Auteur : {{ article.author }} <br>
+          {{ article.desc }}
+        </FONT>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!-- Message de connexion affiché si l'utilisateur vient de se connecter -->
+<div *ngIf="connected" class="uk-alert-success uk-text-center uk-padding-small" uk-alert>
+  <p><strong>Vous êtes connecté</strong></p>
+</div>
+
+<div class="uk-container" uk-height-viewport="offset-bottom: 40">
+  <!-- Boutons de navigation vers les pages de connexion, inscription et création d'article -->
+  <button class="uk-button uk-button-primary uk-width-1-1" (click)="connexion()">Connexion</button>
+  <button class="uk-button uk-button-primary uk-width-1-1" (click)="inscription()">Inscription</button>
+  <button class="uk-button uk-button-primary uk-width-1-1" (click)="creation()">+</button>
+
+  <h2><b>Articles</b></h2>
+  <div class="uk-margin"></div>
+
+  <!-- Affichage des articles en grille -->
+  <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+    <div *ngFor="let article of DB_Articles">
+      <div>
+        <!-- Boutons pour modifier ou supprimer un article -->
+        <button class="uk-button uk-button-primary uk-width-1-1" (click)="modifier(article.id)">Modifier</button>
+        <button class="uk-button uk-button-primary uk-width-1-1" (click)="supprimer(article.id)">Supprimer</button>
+
+        <!-- Carte affichant l'article avec image de fond -->
+        <div class="uk-card uk-card-secondary uk-card-hover uk-card-body sdv-movie-card"
+             [ngStyle]="{ 'background-image': 'url(' + article.imgPath + ')' }">
+          <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <h3 class="uk-card-title"><font color="black">{{ article.title }}</font></h3>
+            <p><font color="black">
+              Auteur : {{ article.author }} <br>
+              Description : {{ article.desc }}
+            </font></p>
+          </div>
+          <!-- Bouton pour voir le détail de l'article -->
+          <button class="uk-button uk-button-primary uk-width-1-1" (click)="detail(article.id)">Voir plus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

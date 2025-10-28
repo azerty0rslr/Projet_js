@@ -1,0 +1,21 @@
+<div class="uk-container">
+  <h2>Connexion</h2>
+  <hr>
+  <h4>Entrer votre email et votre mots de passe pour vous connecter</h4>
+
+  <!-- Email et mot de passe liés à user -->
+  <div class="uk-margin">
+    <input class="uk-input" [(ngModel)]="user.email" type="text" placeholder="Email"/>
+  </div>
+  <div class="uk-margin">
+    <input class="uk-input" [(ngModel)]="user.password" type="password" placeholder="Mots de passe"/>
+  </div>
+
+  <!-- Bouton connexion -->
+  <button class="uk-button uk-button-primary uk-width-1-1"
+          (click)="sendFormData()">Se connecter
+  </button>
+
+  <!-- Lien mot de passe oublié -->
+  <p class="uk-button uk-width-1-1" (click)="mdp()">Mots de passe oublié</p>
+</div>

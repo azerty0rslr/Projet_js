@@ -1,0 +1,26 @@
+<div class="uk-container">
+  <h2>Inscription</h2>
+
+  <hr>
+  <h4>Entrer votre email puis confirmez votre mots de passe</h4>
+
+  <!-- Champ email -->
+  <div class="uk-margin">
+    <input class="uk-input" [(ngModel)]="user.email" type="text" placeholder="Email"/>
+  </div>
+
+  <!-- Premier mot de passe -->
+  <div class="uk-margin">
+    <input class="uk-input" [(ngModel)]="user.password" type="password" placeholder="Mot de passe"/>
+  </div>
+
+  <!-- Confirmation mot de passe -->
+  <div class="uk-margin">
+    <input class="uk-input" [(ngModel)]="confirmPassword" type="password" placeholder="Confirmer le mot de passe"/>
+  </div>
+
+  <!-- Bouton pour s'inscrire -->
+  <button class="uk-button uk-button-primary uk-width-1-1"
+          (click)="sendFormData()">S'inscrire
+  </button>
+</div>
